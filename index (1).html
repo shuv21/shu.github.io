@@ -3,382 +3,279 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Love ❤️</title>
+    <title>For My Love ❤️</title>
     <style>
-        /* Global Styles */
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap');
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
         body {
-            background-color: #050005; /* Deep dark background */
-            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fce3ec, #ffe8e8);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             overflow-x: hidden;
-        }
-        a { text-decoration: none; color: white; }
-        
-        /* Glowing Text Effect */
-        .glow-text {
-            color: #fff;
-            text-shadow: 0 0 10px #ff3366, 0 0 20px #ff3366, 0 0 40px #ff0055;
-        }
-        .pink-text {
-            color: #ff6699;
+            position: relative;
         }
 
-        /* Navbar */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px 50px;
-            background: rgba(0, 0, 0, 0.7);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(5px);
-        }
-        .nav-links {
-            display: flex;
-            gap: 20px;
-            font-size: 0.9em;
-        }
-        .nav-links a:hover {
-            color: #ff3366;
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 105, 135, 0.2);
+            backdrop-filter: blur(10px);
+            max-width: 600px;
+            width: 90%;
+            z-index: 10;
         }
 
-        /* Reusable Buttons */
-        .btn {
-            background: linear-gradient(45deg, #ff3366, #ff0055);
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 25px;
-            font-size: 1.1em;
-            cursor: pointer;
-            box-shadow: 0 0 15px #ff3366;
-            transition: transform 0.3s;
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            color: #d81b60;
+            font-size: 3rem;
+            margin-bottom: 20px;
         }
-        .btn:hover {
+
+        .main-img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .main-img:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 25px #ff3366;
         }
 
-        /* Section 1: Hero */
-        .hero {
-            height: 100vh;
+        .buttons {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            /* Yahan aap koi dark romantic background image ka link daal sakte hain */
-            background: radial-gradient(circle, rgba(40,0,20,1) 0%, rgba(5,0,5,1) 100%);
-            padding-top: 60px;
-        }
-        .hero h1 {
-            font-size: 5em;
-            margin: 10px 0;
-            font-family: 'Brush Script MT', cursive; /* Gives a stylish look */
-        }
-        .hero p {
-            font-size: 1.5em;
-            margin-bottom: 30px;
-        }
-
-        /* Section 2: Letter */
-        .section-title {
-            text-align: center;
-            font-size: 2.5em;
-            margin: 50px 0 30px;
-        }
-        .letter-container {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            padding: 0 20px;
-        }
-        .envelope, .letter-paper {
-            width: 400px;
-            height: 300px;
-            border-radius: 10px;
-        }
-        .envelope {
-            background: #e65c7a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4em;
-            box-shadow: 0 10px 20px rgba(255, 51, 102, 0.2);
-        }
-        .letter-paper {
-            background: #ffeff3;
-            color: #550011;
-            padding: 30px;
-            box-sizing: border-box;
-            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
-        }
-        .letter-paper h3 {
-            color: #d4224c;
-            text-align: center;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-        }
-        .letter-paper p {
-            font-size: 1em;
-            line-height: 1.6;
-            text-align: center;
-        }
-
-        /* Section 3: Memories */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
-            padding: 20px 10%;
         }
-        .gallery-item {
-            background: #220011;
-            height: 150px;
-            border: 2px solid #ff3366;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(255, 51, 102, 0.3);
-            display: flex;
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-letter {
+            background: #ff8a80;
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 138, 128, 0.4);
+        }
+
+        .btn-gallery {
+            background: #ff5252;
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 82, 82, 0.4);
+        }
+
+        .btn-magic {
+            background: #d50000;
+            color: white;
+            box-shadow: 0 4px 15px rgba(213, 0, 0, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            filter: brightness(1.1);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 100;
+            justify-content: center;
             align-items: center;
-            justify-content: center;
-            color: #ff3366;
-        }
-        .gallery-btn-container {
-            text-align: center;
-            margin-top: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
-        /* Section 4: Reasons */
-        .reasons-container {
+        .modal.active {
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            padding: 20px;
+            opacity: 1;
         }
-        .reason-card {
-            background: rgba(255, 51, 102, 0.05);
-            border: 1px solid #ff3366;
+
+        .modal-content {
+            background: white;
+            padding: 30px;
             border-radius: 15px;
-            width: 180px;
-            padding: 20px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
             text-align: center;
-            box-shadow: 0 0 10px rgba(255, 51, 102, 0.2);
-        }
-        .reason-card .icon {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            display: block;
-        }
-        .reason-card h4 {
-            color: #ff6699;
-            margin-bottom: 10px;
-        }
-        .reason-card p {
-            font-size: 0.85em;
-            color: #ccc;
         }
 
-        /* Section 5: Timer */
-        .timer-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-        .time-box {
-            background: #110005;
-            border: 1px solid #ff3366;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            min-width: 100px;
-        }
-        .time-box h2 {
-            color: #ff3366;
-            font-size: 2.5em;
-            margin-bottom: 5px;
-        }
-
-        /* Section 6: Surprise & Footer */
-        .surprise-section {
-            text-align: center;
-            padding: 80px 20px;
-            background: radial-gradient(circle, rgba(50,0,20,1) 0%, rgba(5,0,5,1) 100%);
-            margin-top: 50px;
-        }
-        .gift-icon {
-            font-size: 5em;
-            margin-top: 30px;
-            animation: bounce 2s infinite;
-        }
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-            40% {transform: translateY(-20px);}
-            60% {transform: translateY(-10px);}
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            border-top: 1px solid #330011;
-            margin-top: 20px;
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
             color: #888;
-            font-size: 0.9em;
         }
 
+        .love-letter p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+            margin-top: 20px;
+        }
+
+        /* Updated Gallery Grid for 6 Photos */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid #ffe8e8;
+        }
+
+        /* Floating Hearts */
+        .heart {
+            position: fixed;
+            font-size: 2rem;
+            bottom: -50px;
+            animation: flyUp 4s linear infinite;
+            z-index: 5;
+        }
+
+        @keyframes flyUp {
+            0% { transform: translateY(0) scale(1) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100vh) scale(1.5) rotate(360deg); opacity: 0; }
+        }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div style="font-weight: bold; font-size: 1.2em;">My Love ❤️</div>
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#letter">Love Letter</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#reasons">Reasons</a>
-            <a href="#time">Our Time</a>
-        </div>
-    </nav>
+    <!-- Hidden Audio File - Replace with your romantic song -->
+    <audio id="bg-music" loop>
+        <source src="romantic-song.mp3" type="audio/mpeg">
+    </audio>
 
-    <section id="home" class="hero">
-        <h2 class="pink-text">Welcome</h2>
-        <h1 class="glow-text">My Love ❤️</h1>
-        <p>Every Love Story Is Beautiful,<br>But Ours Is My Favorite ❤️</p>
-        <a href="#letter" class="btn" style="display: inline-block; margin-top: 20px;">Open My Heart 💌</a>
-    </section>
-
-    <section id="letter">
-        <h2 class="section-title glow-text">A Letter For You 💌</h2>
-        <div class="letter-container">
-            <div class="envelope">
-                💖
-            </div>
-            <div class="letter-paper">
-                <h3>My Dearest Love ❤️</h3>
-                <p>Jab se tum meri life mein aayi ho,<br>har din special ban gaya hai.<br>Tumhari smile meri duniya roshan kar deti hai.<br>Tumhari har baat mere dil ko chhoo jati hai.<br>Main hamesha tumhare saath rehna chahta hoon, har khushi, har dukh mein.<br>Thank you for being the most beautiful part of my life.</p>
-                <br>
-                <p style="color: #d4224c; font-style: italic; font-weight: bold;">I Love You Forever ❤️<br>Yours Always 💞</p>
-            </div>
+    <div class="container">
+        <h1>Just For You, My Love ❤️</h1>
+        <!-- Main Photo - Replaced with couple-basket.png (image_5.png) -->
+        <img src="couple-basket.png" alt="Couple in a basket" class="main-img" onerror="this.src='https://via.placeholder.com/250x250?text=Hero+Photo'">
+        
+        <div class="buttons">
+            <button class="btn-letter" onclick="openModal('letter-modal')">💌 Open My Love Letter</button>
+            <button class="btn-gallery" onclick="openModal('gallery-modal')">📸 See Our Memories</button>
+            <button class="btn-magic" onclick="startMagic()">✨ Click for Magic</button>
         </div>
-    </section>
+    </div>
 
-    <section id="gallery">
-        <h2 class="section-title glow-text">Our Beautiful Memories ❤️</h2>
-        <div class="gallery">
-            <div class="gallery-item">
-    <img src="https://img.magnific.com/premium-photo/side-view-anime-characters-hugging_926199-4219860.jpg</div>
-            <div class="gallery-item">img src=""https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-NGE5W9kNlprLL_R1Eg-BjrGMzX1g_lS6U99sQo7cFZyKepGoINHQt74&s=10</div>
-            <div class="gallery-item">img src=""https://pngtree.com/freebackground/romantic-couple-love-appointment_969247.html</div>
-            <div class="gallery-item">img src=https://pngtree.com/so/couple-sitting-under-the-tree</div>
-            <div class="gallery-item">img src=https://pngtree.com/free-png-vectors/couple-enjoying</div>
-            <div class="gallery-item">img src=https://pngtree.com/freebackground/background-of-lovely-young-couple-in-love-on-a-swing_15335823.html</div>
+    <!-- Love Letter Modal -->
+    <div id="letter-modal" class="modal">
+        <div class="modal-content love-letter">
+            <span class="close-btn" onclick="closeModal('letter-modal')">✖</span>
+            <h2 style="color: #d81b60; font-family: 'Dancing Script', cursive; font-size: 2.5rem;">My Dearest,</h2>
+            <p>
+                Yahan par aap apna pyara sa love letter likh sakte hain. Usse bataiye ki wo aapke liye kitni special hai aur uski presence aapki life mein kitni matter karti hai. 
+                <br><br>
+                Maine hamari kuch bahut special photos bhi is website mein add ki hain. I love you more than words can express! ❤️
+            </p>
         </div>
-        <div class="gallery-btn-container">
-            <button class="btn" onclick="window.open('YAHAN_APNI_GOOGLE_DRIVE_KI_LINK_DALEIN', '_blank')">View Full Gallery 💖</button>
-        </div>
-    </section>
+    </div>
 
-    <section id="reasons">
-        <h2 class="section-title glow-text">Reasons Why I Love You ❤️</h2>
-        <div class="reasons-container">
-            <div class="reason-card">
-                <span class="icon">😊</span>
-                <h4>Your Smile</h4>
-                <p>It makes my whole world brighter.</p>
-            </div>
-            <div class="reason-card">
-                <span class="icon">❤️</span>
-                <h4>Your Care</h4>
-                <p>You care for me in the most beautiful way.</p>
-            </div>
-            <div class="reason-card">
-                <span class="icon">⭐</span>
-                <h4>Your Presence</h4>
-                <p>Being with you feels like home to me.</p>
-            </div>
-            <div class="reason-card">
-                <span class="icon">💬</span>
-                <h4>Your Talks</h4>
-                <p>I could listen to you all day and never get bored.</p>
-            </div>
-            <div class="reason-card">
-                <span class="icon">💖</span>
-                <h4>Everything</h4>
-                <p>I love everything about you, my love.</p>
+    <!-- Gallery Modal - With all 6 new photos -->
+    <div id="gallery-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('gallery-modal')">✖</span>
+            <h2 style="color: #d81b60; font-family: 'Dancing Script', cursive; font-size: 2.5rem;">Our Moments</h2>
+            <div class="gallery-grid">
+                <!-- Replace src with your image names (images from image_0.png to image_5.png) -->
+                <img src="couple-kiss.png" alt="Couple kissing" onerror="this.src='https://via.placeholder.com/150'">
+                <img src="couple-piggyback.png" alt="Piggyback ride" onerror="this.src='https://via.placeholder.com/150'">
+                <img src="couple-cuddle.png" alt="Couple cuddling" onerror="this.src='https://via.placeholder.com/150'">
+                <img src="couple-lift.png" alt="Romantic lift" onerror="this.src='https://via.placeholder.com/150'">
+                <img src="couple-love.png" alt="Sitting on LOVE" onerror="this.src='https://via.placeholder.com/150'">
+                <img src="couple-basket.png" alt="In a basket" onerror="this.src='https://via.placeholder.com/150'">
             </div>
         </div>
-    </section>
-
-    <section id="time">
-        <h2 class="section-title glow-text">Together Since ❤️</h2>
-        <p style="text-align: center; color: #aaa;">27 number 2025 ()</p>
-        <div class="timer-container">
-            <div class="time-box">
-                <h2 id="days">00</h2>
-                <p>Days</p>
-            </div>
-            <div class="time-box">
-                <h2 id="hours">00</h2>
-                <p>Hours</p>
-            </div>
-            <div class="time-box">
-                <h2 id="minutes">00</h2>
-                <p>Minutes</p>
-            </div>
-            <div class="time-box">
-                <h2 id="seconds">00</h2>
-                <p>Seconds</p>
-            </div>
-        </div>
-        <p style="text-align: center; margin-top: 20px; color: #ff6699; font-style: italic;">Every moment with you is a treasure ❤️</p>
-    </section>
-
-    <section class="surprise-section">
-        <h2 class="glow-text" style="font-size: 2.5em; margin-bottom: 20px;">No Matter What Happens...</h2>
-        <h1 class="glow-text" style="font-size: 3.5em; font-family: 'Brush Script MT', cursive;">I Will Always Love You ❤️</h1>
-        <div class="gift-icon">🎁</div>
-        <br><br>
-        <button class="btn" onclick="alert('Tum meri jaan ho! I promise to annoy you for the rest of our lives. 💖')">Click For A Surprise 💖</button>
-    </section>
-
-    <footer>
-        Made with ❤️ for the most beautiful girl in the world. | You are my today1 and all of my tomorrows. 💕
-    </footer>
+    </div>
 
     <script>
-        // Apni anniversary date yahan set karein (Year, Month (0-11 so Jan is 0), Date)
-        // Format: new Date(year, monthIndex, day)
-        // Example below is 27 number 2025 -> new Date(2025 ,11 27)
-        const startDate = new Date(2025 , 10 ,27).getTime(); 
-
-        function updateTimer() {
-            const now = new Date().getTime();
-            const difference = now - startDate;
-
-            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-            document.getElementById("days").innerText = days;
-            document.getElementById("hours").innerText = hours;
-            document.getElementById("minutes").innerText = minutes;
-            document.getElementById("seconds").innerText = seconds;
+        // Open Modal Function
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
         }
 
-        setInterval(updateTimer, 1000);
-        updateTimer(); // Initial call
-    </script>
+        // Close Modal Function
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+        }
 
+        // Magic Feature: Music & Floating Hearts
+        let magicStarted = false;
+        function startMagic() {
+            // Play Music
+            let music = document.getElementById('bg-music');
+            if (music.paused) {
+                music.play().catch(error => alert("Browser autoplay policy blocked music. Make sure 'romantic-song.mp3' exists in your folder."));
+            }
+
+            // Start flying hearts if not already started
+            if (!magicStarted) {
+                magicStarted = true;
+                setInterval(createHeart, 300); // Creates a new heart every 300ms
+            }
+        }
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            
+            // Random horizontal position
+            heart.style.left = Math.random() * 100 + 'vw';
+            
+            // Random animation duration for variety
+            heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            
+            document.body.appendChild(heart);
+            
+            // Remove heart after animation to keep the site fast
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+    </script>
 </body>
 </html>
